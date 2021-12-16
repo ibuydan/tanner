@@ -20,6 +20,7 @@ RUN apk -U --no-cache add \
     cd /opt/tanner/ && \
     pip3 install --no-cache-dir setuptools && \
     pip3 install --no-cache-dir -r requirements.txt && \
+    sed -i 's/^aiohttp$/aiohttp==3.7.4.post0/g' requirements.txt && \
     python3 setup.py install && \
     cd / && \
 # Setup configs, user, groups
